@@ -52,7 +52,22 @@ async function download() {
     //console.log(data);
     data = {mona : data};
     data = JSON.stringify(data);
-    console.log(data);
+    //console.log(data);
+    
+}
+
+function readSingleFile(e) {
+    //console.log(e);
+    var file = e.target.files[0];
+    if (!file) {
+        return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var contents = e.target.result;
+        classifier.setClassifierDataset(JSON.parse(contents).mona);
+    };
+    reader.readAsText(file);
 }
 
 async function app() {
@@ -88,8 +103,11 @@ async function app() {
     document.getElementById('class-b').addEventListener('click', () => addExample(1));
     document.getElementById('class-c').addEventListener('click', () => addExample(2));
 
-    //when clicking download button, download a json file with classifier data
+    // when clicking download button, download a json file with classifier data
     document.getElementById('down').addEventListener('click',() => download());
+
+    // when clicking upload button, read the file's content and load it to classifier
+    document.getElementById('file-input').addEventListener('change', readSingleFile, false);     
   
     while (true) {
       if (classifier.getNumClasses() > 0) {

@@ -4,7 +4,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
   </head>
   <body>
     <div id="console"></div>
@@ -15,9 +14,13 @@
     -->
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
+    <!-- Add classes to classifier -->
     <button id="class-a">Add A</button>
     <button id="class-b">Add B</button>
     <button id="class-c">Add C</button><br />
-    <button id="down">Download</button>
+    <!-- Download the classifier data -->
+    <button id="down">Download</button><br />
+    <!-- Upload classifier data -->
+    load<input id="file-input" type="file" /><br />
   </body>
 </html>

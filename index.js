@@ -52,6 +52,7 @@ async function download() {
     //console.log(data);
     data = {mona : data};
     data = JSON.stringify(data);
+<<<<<<< HEAD
     //console.log(data);
     
 }
@@ -68,6 +69,28 @@ function readSingleFile(e) {
         classifier.setClassifierDataset(JSON.parse(contents).mona);
     };
     reader.readAsText(file);
+=======
+    console.log(data);
+    function dow(filename,text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+    
+      element.style.display = 'none';
+      document.body.appendChild(element);
+    
+      element.click();
+    
+      document.body.removeChild(element);
+    }
+    
+      // Generate download of hello.txt file with some content
+     // var text = document.getElementById("text-val").value;
+     // var filename = "hello.txt";
+      
+      await dow("jsondata.json", data);
+ 
+>>>>>>> e67603e77d5baf2a10ee8b2fa000ef72ff15e114
 }
 
 async function app() {

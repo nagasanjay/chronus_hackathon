@@ -52,6 +52,7 @@ async function download() {
     //console.log(data);
     data = {mona : data};
     data = JSON.stringify(data);
+<<<<<<< HEAD
     //console.log(data);
     
 }
@@ -69,6 +70,9 @@ function readSingleFile(e) {
         i = 0;
     };
     reader.readAsText(file);
+=======
+    console.log(data);
+>>>>>>> parent of e67603e... added download feature for classifier data
 }
 
 async function app() {

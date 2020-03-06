@@ -32,7 +32,7 @@ async function app() {
     while (true) {
       const img = await webcam.capture();
       const result = await net.classify(img);
-  
+
       document.getElementById('console').innerText = `
         prediction: ${result[0].className}\n
         probability: ${result[0].probability}
